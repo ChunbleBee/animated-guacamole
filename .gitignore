@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+#AppGameKit specific files
+*.byc
