@@ -32,11 +32,11 @@ Function ConstructBoard(xSize As Integer, ySize As Integer, numHoles As Integer)
 	For i = 0 To size
 		If (tempNumHoles > 0)
 			newTiles[i].IsHill = FALSE
-			newTiles[i].SpriteID = CreateSprite(HOLEIMG)
-			numHoles = tempNumHoles - 1
+			//newTiles[i].SpriteID = CreateSprite(HOLEIMG)
+			tempNumHoles = tempNumHoles - 1
 		Else
 			newTiles[i].IsHill = TRUE
-			newTiles[i].SpriteID = CreateSprite(HILLIMG)
+			//newTiles[i].SpriteID = CreateSprite(HILLIMG)
 		EndIf
 
 		newTiles[i].Revealed = FALSE
@@ -53,7 +53,7 @@ Function ConstructBoard(xSize As Integer, ySize As Integer, numHoles As Integer)
 		yPos = i/newBoard.XSize
 		xPos = Mod(i, newBoard.XSize)
 		newBoard.Grid[yPos, xPos] = newTiles[i]
-		SetSpritePosition(newBoard.Grid[yPos, xPos].SpriteID, xPos*96.0, yPos*96.0)
+		//SetSpritePosition(newBoard.Grid[yPos, xPos].SpriteID, xPos*96.0, yPos*96.0)
 	Next i
 	
 	//Be a cool kid, and return
@@ -63,8 +63,8 @@ Function RandomizeTiles(tiles As Tile[], size As Integer, numHoles As Integer)
 	nextSwap As Integer
 	temp As Tile
 	
-	For i = 0 To numHoles
-		nextSwap = Random(numHoles + 1, size - 1)
+	For i = 0 To (numHoles - 1)
+		nextSwap = Random(numHoles, size - 1)
 
 		If (tiles[nextSwap].IsHill = TRUE)
 			temp = tiles[nextSwap]
