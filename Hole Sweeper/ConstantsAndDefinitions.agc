@@ -1,0 +1,13 @@
+// File: ConstantsAndDefinitions.agc
+// Created: 21-11-02
+
+#CONSTANT TRUE 1
+#CONSTANT FALSE 0
+
+#CONSTANT MAXSIZE = 4000000
+#CONSTANT MAXCOLSIZE = 2000
+#CONSTANT MAXROWSIZE = 2000
+
+#CONSTANT HILLSPRITE = "./media/tile11.png"
+#CONSTANT HOLESPRITE = "./media/tile2.png"
+#CONSTANT UKNOWNSPRITE = "./media/tile26.png"

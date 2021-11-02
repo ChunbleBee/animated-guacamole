@@ -49,10 +49,15 @@ output_path=
 
 [projectfiles]
 FILE_0=main.agc;-1
+FILE_1=BoardObject.agc;-1
+FILE_2=TileObject.agc;-1
+FILE_3=ConstantsAndDefinitions.agc;-1
 
 [files]
-FILE_NAME_0=1;main.agc;25;0
-
+FILE_NAME_0=0;main.agc;26;0
+FILE_NAME_1=0;BoardObject.agc;20;1
+FILE_NAME_2=0;TileObject.agc;10;2
+FILE_NAME_3=1;ConstantsAndDefinitions.agc;0;3
 
 [watchvariables]
 
