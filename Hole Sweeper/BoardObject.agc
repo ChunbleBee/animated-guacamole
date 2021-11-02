@@ -32,11 +32,11 @@ Function ConstructBoard(xSize As Integer, ySize As Integer, numHoles As Integer)
 	For i = 0 To size
 		If (tempNumHoles > 0)
 			newTiles[i].IsHill = FALSE
-			newTiles[i].Sprite = HOLESPRITE
+			newTiles[i].SpriteID = CreateSprite(HOLEIMG)
 			numHoles = tempNumHoles - 1
 		Else
 			newTiles[i].IsHill = TRUE
-			newTiles[i].Sprite = HILLSPRITE
+			newTiles[i].SpriteID = CreateSprite(HILLIMG)
 		EndIf
 
 		newTiles[i].Revealed = FALSE
@@ -53,6 +53,7 @@ Function ConstructBoard(xSize As Integer, ySize As Integer, numHoles As Integer)
 		yPos = i/newBoard.XSize
 		xPos = Mod(i, newBoard.XSize)
 		newBoard.Grid[yPos, xPos] = newTiles[i]
+		SetSpritePosition(newBoard.Grid[yPos, xPos].SpriteID, xPos*96.0, yPos*96.0)
 	Next i
 	
 	//Be a cool kid, and return

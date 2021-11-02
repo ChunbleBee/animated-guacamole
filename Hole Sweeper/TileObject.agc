@@ -10,5 +10,5 @@
 Type Tile
 	IsHill As Integer
 	Revealed As Integer
-	Sprite As String
+	SpriteID
 EndType

@@ -2,6 +2,7 @@
 // Created: 21-11-02
 
 #INCLUDE "BoardObject.agc"
+#INCLUDE "ConstantsAndDefinitions.agc"
 
 // show all errors
 SetErrorMode(2)
@@ -23,6 +24,13 @@ PlayBoard = ConstructBoard(100, 100, 35)
 
 Do
     Print( ScreenFPS() )
+
+    For y = 0 To PlayBoard.YSize
+    	For x = 0 To PlayBoard.XSize
+    		DrawSprite(PlayBoard.Grid[y, x].SpriteID)
+    	Next x
+    Next y
+   
     Sync()
     // Cool!
 Loop
