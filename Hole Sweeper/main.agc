@@ -21,4 +21,5 @@ UseNewDefaultFonts( 1 )
 do
     Print( ScreenFPS() )
     Sync()
+    // Cool!
 loop
