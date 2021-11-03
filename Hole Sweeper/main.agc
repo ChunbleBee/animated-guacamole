@@ -29,13 +29,13 @@ PlayBoard = ConstructBoard(35, 40, 35)
 Do
     Print( ScreenFPS() )
 
-    For y = 0 To PlayBoard.YSize
-    	For x = 0 To PlayBoard.XSize
+    For y = 0 To PlayBoard.YSize - 1
+    	For x = 0 To PlayBoard.XSize - 1
     		x1 = x*10
     		x2 = x*10 + 5
     		y1 = y*10
     		y2 = y*10 + 5
-   
+
     		If (PlayBoard.Grid[y, x].IsHill = TRUE)
     			DrawBox(x1, y1, x2, y2, LightBlue, LightBlue, LightBlue, LightBlue, TRUE)
     		Else

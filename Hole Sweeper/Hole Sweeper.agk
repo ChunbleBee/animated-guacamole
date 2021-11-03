@@ -54,9 +54,9 @@ FILE_2=main.agc;-1
 FILE_3=TileObject.agc;-1
 
 [files]
-FILE_NAME_0=1;BoardObject.agc;71;0
+FILE_NAME_0=0;BoardObject.agc;48;0
 FILE_NAME_1=0;ConstantsAndDefinitions.agc;18;1
-FILE_NAME_2=0;main.agc;33;2
+FILE_NAME_2=0;main.agc;42;2
 FILE_NAME_3=0;TileObject.agc;12;3
 
 [watchvariables]

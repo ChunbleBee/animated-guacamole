@@ -14,19 +14,24 @@
 Type Board
 	XSize As Integer
 	YSize As Integer
-	Grid As Tile[MAXCOLSIZE, MAXROWSIZE]
+	Grid As Tile[1,1]
 EndType
 
 Function ConstructBoard(xSize As Integer, ySize As Integer, numHoles As Integer)
+	size As Integer
+	size = xSize*ySize
+	
+	tempNumHoles As Integer
 	newBoard As Board
+	Dim newTiles[size] As Tile
+	Dim grid[ySize, xSize] As Tile
+	
+	newBoard.Grid = grid
+	newTiles.length = size
+	tempNumHoles = numHoles
+	
 	newBoard.XSize = xSize
 	newBoard.YSize = ySize
-	newTiles As Tile[MAXSIZE] // Because we can't define the size of an array at runtime... le sigh, Basic.
-	
-	size As Integer
-	tempNumHoles As Integer
-	size = xSize*ySize
-	tempNumHoles = numHoles
 
 	// Build our tiles
 	For i = 0 To size
@@ -49,9 +54,10 @@ Function ConstructBoard(xSize As Integer, ySize As Integer, numHoles As Integer)
 	// Emplace the tiles onto the board
 	xPos As Integer
 	yPos As Integer
-	For i = 0 To size
+	For i = 0 To size-1
 		yPos = i/newBoard.XSize
 		xPos = Mod(i, newBoard.XSize)
+		//Print("(" + Str(xPos) + ", " + Str(yPos) + ")")
 		newBoard.Grid[yPos, xPos] = newTiles[i]
 		//SetSpritePosition(newBoard.Grid[yPos, xPos].SpriteID, xPos*96.0, yPos*96.0)
 	Next i
@@ -62,14 +68,11 @@ EndFunction newBoard
 Function RandomizeTiles(tiles As Tile[], size As Integer, numHoles As Integer)
 	nextSwap As Integer
 	temp As Tile
+	Dim output[size] As Tile
 	
-	For i = 0 To (numHoles - 1)
-		nextSwap = Random(numHoles, size - 1)
-
-		If (tiles[nextSwap].IsHill = TRUE)
-			temp = tiles[nextSwap]
-			tiles[nextSwap] = tiles[i]
-			tiles[i] = temp
-		EndIf
+	For i = 0 To (size - 1)
+		nextSwap = Random(0, tiles.length - 1)
+		output[i] = tiles[nextSwap]
+		tiles.remove(nextSwap)
 	Next i
-EndFunction tiles
+EndFunction output
