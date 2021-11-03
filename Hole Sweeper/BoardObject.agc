@@ -50,7 +50,6 @@ Function ConstructBoard(xSize As Integer, ySize As Integer, numHoles As Integer)
 	// Randomize the position of our tiles, s.t. holes aren't clumped in the first few rows.
 	newTiles = RandomizeTiles(newTiles, size, numHoles)
 
-
 	// Emplace the tiles onto the board
 	xPos As Integer
 	yPos As Integer

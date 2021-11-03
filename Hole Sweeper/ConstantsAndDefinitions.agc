@@ -12,7 +12,7 @@ Global HillFileLoc As String
 Global HoleFileLoc As String
 Global UnknownFileLoc As String
 
-Global HillImg, HoleImg, UnknownImg
+Global HillImg, HoleImg, UnknownImg, TileSize
 
 HillFileLoc = "./media/tile11.png"
 HoleFileLoc = "./media/tile2.png"
@@ -21,3 +21,5 @@ UnknownFileLoc = "./media/tile26.png"
 HillImg = LoadImage(HillFileLoc)
 HoleImg = LoadImage(HoleFileLoc)
 UnknownImg = LoadImage(UnknownFileLoc)
+
+TileSize = 40
