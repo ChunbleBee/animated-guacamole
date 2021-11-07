@@ -2,6 +2,7 @@
 // Created: 21-11-02
 
 #INCLUDE "ConstantsAndDefinitions.agc"
+#INCLUDE "ListNodeObject.agc"
 #INCLUDE "BoardObject.agc"
 
 // show all errors
@@ -24,7 +25,7 @@ LightBlue = MakeColor(0,191,255)
 Grey = MakeColor(128,128,128)
 
 PlayBoard As Board
-PlayBoard = ConstructBoard(35, 40, 100)
+PlayBoard = ConstructBoard(40, 35, 200)
 TileSize = 20
 
 Do
@@ -54,6 +55,7 @@ Do
     	xPos = GetPointerX()/TileSize
     	yPos = GetPointerY()/TileSize
     	PlayBoard.Grid[yPos, xPos].Revealed = TRUE
+    	
     EndIf
    
 	Sync()
